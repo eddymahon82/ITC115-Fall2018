@@ -15,16 +15,16 @@ public class Product {
 
 	//Constructors - initializing the state of the created objects
 	public Product(String code, String description, double price) {
-			this.code = code;
-			this.description = description;
-			this.price = price;	
-			count++; 
-		}
-	
+		this.code = code;
+		this.description = description;
+		this.price = price;	
+		count++; 
+	}
+
 	public String getPriceFormatted() {
-        String formattedPrice = NumberFormat.getCurrencyInstance().format(this.price);
-        return formattedPrice;
-    }
+		String formattedPrice = NumberFormat.getCurrencyInstance().format(this.price);
+		return formattedPrice;
+	}
 
 	//Methods
 	public String getCode() {
@@ -59,10 +59,11 @@ public class Product {
 	public static void setCount(int count) {
 		Product.count = count;
 	}
-	
+
 	//Returns a string representation of object
-		public String toString() {
-			return ("Product Code: " + code + "    Description: " + description + 
-					"    Price: " + getPriceFormatted());
-		}
+	@Override
+	public String toString() {
+		return ("Product Code: " + code + "    Description: " + description + 
+				"    Price: " + getPriceFormatted());
+	}
 }
